@@ -68,14 +68,14 @@ int main(int argc, char* argv[]) {
 
   // prep the measurement packages (each line represents a measurement at a
   // timestamp)
-  while (getline(in_file_, line)) {
+
+    while (getline(in_file_, line)) {
 
     string sensor_type;
     MeasurementPackage meas_package;
     GroundTruthPackage gt_package;
     istringstream iss(line);
     long long timestamp;
-
     // reads first element from the current line
     iss >> sensor_type;
     if (sensor_type.compare("L") == 0) {
@@ -122,6 +122,7 @@ int main(int argc, char* argv[]) {
     gt_package.gt_values_ = VectorXd(4);
     gt_package.gt_values_ << x_gt, y_gt, vx_gt, vy_gt;
     gt_pack_list.push_back(gt_package);
+
   }
 
   // Create a Fusion EKF instance
@@ -180,5 +181,6 @@ int main(int argc, char* argv[]) {
     in_file_.close();
   }
 
+  cin.get();
   return 0;
 }
