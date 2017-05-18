@@ -2,7 +2,8 @@
 
 This is the first project in the second term of the Self Driving Car Nanodegree course offered by Udacity.
 
-In this project we fuse the Lidar and Radar measurements to estimate the position of objects on the road such as pedestrains, bicycles, other cars, etc. This project uses Extended Kalman Filters for prediction and update.
+In this project we fuse the Lidar and Radar measurements to estimate the position of objects on the road such as pedestrains, bicycles, other cars, etc. This project uses Extended Kalman Filters for prediction and update. Here we assume the vehicle is moving with a constant velocity in a straight line. See the next project with [Unscented Kalman Filters](https://github.com/kharikri/CarND-Unscented-Kalman-Filter-Project/blob/master/README.md) to handle turns as well.
+
 
 I implemented this project in C++.
 
@@ -28,6 +29,4 @@ The following gives details on how to run the code:
 2. Make a build directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make` 
    * On windows, you may need to run: `cmake .. -G "Unix Makefiles" && make`
-4. Run it: `./ExtendedKF path/to/input.txt path/to/output.txt`. You can find
-   some sample inputs in 'data/'.
-    - eg. `./ExtendedKF ../data/obj_pose-laser-radar-synthetic-input.txt output.txt`
+4. Run it: `./ExtendedKF path/to/input.txt path/to/output.txt`
